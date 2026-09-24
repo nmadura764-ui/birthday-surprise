@@ -142,3 +142,10 @@ yesButton2.addEventListener("click", () => {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+skipButton.addEventListener("click", () => {
+    document.body.classList.add("page-leaving");
+
+    setTimeout(() => {
+        window.location.href = "page2.html";
+    }, 800);
+});
