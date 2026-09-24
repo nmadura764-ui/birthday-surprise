@@ -1,0 +1,1581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Baloo 2", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN BACKGROUND
+========================================= */
+
+.secret-room {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #fff7fb 0%,
+            #fce8f1 35%,
+            #f4d3e2 70%,
+            #ebc0d5 100%
+        );
+
+    color: #6d4b5d;
+}
+
+
+/* =========================================
+   GLOW
+========================================= */
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+.glow-one {
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(255, 182, 210, 0.35);
+
+    top: 5%;
+    left: 10%;
+}
+
+.glow-two {
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(205, 182, 255, 0.25);
+
+    bottom: 5%;
+    right: 10%;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+.floating-star {
+
+    position: absolute;
+
+    color: #d997b5;
+
+    font-size: 25px;
+
+    animation: floatStar 3s infinite ease-in-out;
+}
+
+.star-one {
+    top: 18%;
+    left: 13%;
+}
+
+.star-two {
+    top: 22%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.star-three {
+    bottom: 18%;
+    left: 18%;
+    animation-delay: 1.6s;
+}
+
+.star-four {
+    bottom: 22%;
+    right: 14%;
+    animation-delay: 0.6s;
+}
+
+@keyframes floatStar {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.doodle {
+
+    position: absolute;
+
+    color: rgba(192, 111, 151, 0.35);
+
+    font-size: 45px;
+
+    font-family: serif;
+}
+
+.doodle-one {
+    top: 35%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+
+.doodle-two {
+    top: 45%;
+    right: 5%;
+}
+
+.doodle-three {
+    bottom: 8%;
+    right: 25%;
+    transform: rotate(12deg);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.page-title {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    margin-top: 55px;
+}
+
+.tiny-label {
+
+    color: #b16b8c;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+}
+
+.page-title h1 {
+
+    font-size: clamp(42px, 7vw, 65px);
+
+    line-height: 0.9;
+
+    color: #70495d;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.page-title p {
+
+    margin-top: 8px;
+
+    color: #a47288;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   CHOICE AREA
+========================================= */
+
+.choice-area {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 90vw);
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================================
+   CIRCULAR BUTTONS
+========================================= */
+
+.choice-circle {
+
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    border: 7px solid rgba(255,255,255,0.8);
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 20px 45px rgba(126,74,102,0.15),
+        inset 0 0 30px rgba(255,255,255,0.5);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.choice-circle:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(2deg);
+
+    box-shadow:
+        0 30px 60px rgba(126,74,102,0.23),
+        inset 0 0 35px rgba(255,255,255,0.65);
+}
+
+.letter-choice {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5d5bd,
+            #e9b895
+        );
+}
+
+.camera-choice {
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9c8ed,
+            #bda5dc
+        );
+}
+
+.gift-choice {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffd1df,
+            #efa6c2
+        );
+}
+
+
+/* =========================================
+   CIRCLE SHINE
+========================================= */
+
+.circle-shine {
+
+    position: absolute;
+
+    top: 12px;
+    left: 25px;
+
+    width: 65px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.35);
+
+    transform: rotate(-25deg);
+
+    filter: blur(2px);
+}
+
+
+/* =========================================
+   LETTER ART
+========================================= */
+
+.letter-art {
+
+    position: relative;
+
+    width: 120px;
+    height: 90px;
+}
+
+.envelope-back {
+
+    position: absolute;
+
+    width: 110px;
+    height: 75px;
+
+    left: 5px;
+    top: 10px;
+
+    background: #c89571;
+
+    border-radius: 6px;
+
+    transform: rotate(-4deg);
+}
+
+.envelope {
+
+    position: absolute;
+
+    width: 115px;
+    height: 78px;
+
+    left: 2px;
+    top: 4px;
+
+    background: #f6dfc9;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 8px 15px rgba(100,60,40,0.15);
+}
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 57px solid transparent;
+    border-right: 57px solid transparent;
+    border-top: 40px solid #e6c2a5;
+}
+
+.envelope-heart {
+
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #c8798f;
+
+    font-size: 27px;
+}
+
+
+/* =========================================
+   CAMERA ART
+========================================= */
+
+.camera-art {
+
+    position: relative;
+
+    width: 120px;
+    height: 90px;
+}
+
+.camera-body {
+
+    position: absolute;
+
+    left: 5px;
+    top: 20px;
+
+    width: 110px;
+    height: 65px;
+
+    border-radius: 18px;
+
+    background: #fff4fb;
+
+    border: 4px solid #8b719b;
+
+    box-shadow:
+        0 8px 15px rgba(80,60,100,0.15);
+}
+
+.camera-top {
+
+    position: absolute;
+
+    left: 15px;
+    top: -14px;
+
+    width: 38px;
+    height: 16px;
+
+    background: #8b719b;
+
+    border-radius: 7px 7px 0 0;
+}
+
+.camera-lens {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #bfa9d3;
+
+    border: 6px solid #776388;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+}
+
+.camera-dot {
+
+    position: absolute;
+
+    top: 12px;
+    right: 13px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #d88ca9;
+}
+
+
+/* =========================================
+   GIFT ART
+========================================= */
+
+.gift-art {
+
+    position: relative;
+
+    width: 120px;
+    height: 110px;
+}
+
+.gift-box {
+
+    position: absolute;
+
+    left: 10px;
+    bottom: 5px;
+
+    width: 100px;
+    height: 72px;
+
+    background: #fff1f5;
+
+    border: 3px solid #c96f96;
+
+    border-radius: 5px;
+}
+
+.gift-lid {
+
+    position: absolute;
+
+    left: -7px;
+    top: -17px;
+
+    width: 114px;
+    height: 25px;
+
+    background: #ffdce8;
+
+    border: 3px solid #c96f96;
+
+    border-radius: 6px;
+}
+
+.gift-ribbon-vertical {
+
+    position: absolute;
+
+    left: 39px;
+    top: 0;
+
+    width: 18px;
+    height: 100%;
+
+    background: #d77ca0;
+}
+
+.gift-ribbon-horizontal {
+
+    position: absolute;
+
+    left: 0;
+    top: 28px;
+
+    width: 100%;
+    height: 16px;
+
+    background: #d77ca0;
+}
+
+.bow-left,
+.bow-right {
+
+    position: absolute;
+
+    top: -42px;
+
+    width: 42px;
+    height: 28px;
+
+    border: 8px solid #d77ca0;
+
+    border-radius: 50%;
+
+    background: transparent;
+}
+
+.bow-left {
+    left: 27px;
+    transform: rotate(-25deg);
+}
+
+.bow-right {
+    right: 27px;
+    transform: rotate(25deg);
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.choice-label {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 5px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.8);
+
+    color: #765064;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   OVERLAYS
+========================================= */
+
+.overlay,
+.finger-start-overlay,
+.contract-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(71,43,58,0.48);
+
+    backdrop-filter: blur(9px);
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-paper {
+
+    position: relative;
+
+    width: min(600px, 92vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 55px 55px 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5dfbd,
+            #edd0a5
+        );
+
+    color: #674938;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 30px 80px rgba(50,30,20,0.3);
+
+    transform: rotate(-1deg);
+
+    border: 1px solid #d4ae7e;
+
+    animation: paperIn 0.5s ease;
+}
+
+@keyframes paperIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+    }
+}
+
+.letter-content {
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.letter-small {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.letter-content h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 43px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.letter-content p {
+
+    margin-bottom: 18px;
+}
+
+.old-divider {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin: 10px 0 20px;
+}
+
+.letter-signature {
+
+    text-align: right;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 34px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CLOSE
+========================================= */
+
+.close-button {
+
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: rgba(255,255,255,0.6);
+
+    color: #755467;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memories-window {
+
+    position: relative;
+
+    width: min(800px, 94vw);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background: #fffafa;
+
+    box-shadow:
+        0 30px 80px rgba(60,40,60,0.25);
+
+    animation: windowIn 0.45s ease;
+}
+
+@keyframes windowIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Fake Google */
+
+.fake-google {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.google-logo {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 31px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+    color: #555;
+}
+
+.search-bar {
+
+    width: min(580px, 90%);
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid #ddd;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+}
+
+.search-text {
+    color: #555;
+}
+
+
+/* Memories */
+
+.memory-title {
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 34px;
+
+    color: #8e5f75;
+
+    margin-bottom: 20px;
+}
+
+.memory-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.memory-photo {
+
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: visible;
+
+    border-radius: 8px;
+
+    padding: 8px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 18px rgba(70,40,60,0.12);
+
+    transform: rotate(-2deg);
+}
+
+.memory-photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.memory-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 4px;
+}
+
+.memory-photo > span {
+
+    position: absolute;
+
+    right: -13px;
+    top: -16px;
+
+    font-size: 30px;
+}
+
+.memory-doodle {
+
+    position: absolute;
+
+    color: #d895b2;
+
+    font-size: 35px;
+}
+
+.doodle-a {
+    left: 15px;
+    top: 35%;
+}
+
+.doodle-b {
+    right: 20px;
+    top: 40%;
+}
+
+.doodle-c {
+    left: 30px;
+    bottom: 20px;
+}
+
+.doodle-d {
+    right: 45px;
+    bottom: 15px;
+}
+
+
+/* =========================================
+   FINGER START
+========================================= */
+
+.finger-start-box {
+
+    width: min(440px, 90vw);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: #fff8fb;
+
+    box-shadow:
+        0 30px 80px rgba(70,40,60,0.3);
+
+    animation: windowIn 0.4s ease;
+}
+
+.finger-start-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+
+    animation: fingerBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes fingerBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.finger-start-box h2 {
+
+    font-size: 32px;
+
+    color: #714a5f;
+
+    margin-bottom: 10px;
+}
+
+.finger-start-box p {
+
+    color: #967083;
+
+    font-size: 19px;
+
+    margin-bottom: 25px;
+}
+
+#fingerStartButton {
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #d4779f;
+
+    color: white;
+
+    font-family: "Baloo 2", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   CONTRACT
+========================================= */
+
+.contract-overlay {
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.contract-paper {
+
+    position: relative;
+
+    width: min(900px, 94vw);
+
+    min-height: 520px;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 45px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4e0b9,
+            #eacb98
+        );
+
+    color: #55402d;
+
+    border: 1px solid #c9a66f;
+
+    box-shadow:
+        0 30px 90px rgba(45,30,15,0.35);
+
+    transform: rotate(-0.5deg);
+
+    animation: contractIn 0.6s ease;
+}
+
+@keyframes contractIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(-0.5deg);
+    }
+}
+
+
+/* Scanner */
+
+.fingerprint-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right: 1px dashed rgba(90,60,30,0.35);
+
+    padding-right: 35px;
+}
+
+.scanner-label {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.fingerprint-circle {
+
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border: 3px dashed #a1784b;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255,245,215,0.45);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.fingerprint-circle.active {
+
+    border-color: #8a5b34;
+
+    box-shadow:
+        0 0 0 8px rgba(138,91,52,0.08),
+        0 0 35px rgba(138,91,52,0.18);
+}
+
+.finger-icon {
+
+    font-size: 65px;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.fingerprint-lines {
+
+    position: absolute;
+
+    font-size: 105px;
+
+    color: #805b38;
+
+    font-family: Georgia, serif;
+
+    animation: fingerprintAppear 0.6s ease;
+}
+
+@keyframes fingerprintAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scanner-text {
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+
+/* Contract content */
+
+.contract-content {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    font-family: Georgia, serif;
+}
+
+.contract-heading {
+
+    text-align: center;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+}
+
+.contract-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(80,55,30,0.35);
+
+    margin-bottom: 25px;
+}
+
+.contract-text {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+
+/* BIG MINE */
+
+.mine-word {
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 90px;
+
+    font-weight: 700;
+
+    color: #75472f;
+
+    transform: rotate(-4deg);
+
+    margin: 10px 0;
+}
+
+
+/* Signature */
+
+.signature-area {
+
+    align-self: flex-end;
+
+    width: 210px;
+
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+.signature-line {
+
+    height: 1px;
+
+    background: #715238;
+
+    margin-bottom: 4px;
+}
+
+.signature {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 48px;
+
+    transform: rotate(-7deg);
+
+    color: #573821;
+}
+
+.signature-area p {
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CONTINUE
+========================================= */
+
+.continue-button {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    z-index: 20;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #d4779f;
+
+    color: white;
+
+    font-family: "Baloo 2", sans-serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .secret-room {
+        min-height: 100vh;
+    }
+
+    .page-title {
+        margin-top: 35px;
+    }
+
+    .choice-area {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 30px 0 50px;
+    }
+
+    .choice-circle {
+
+        width: 155px;
+        height: 155px;
+    }
+
+    .letter-art,
+    .camera-art,
+    .gift-art {
+
+        transform: scale(0.75);
+    }
+
+    .choice-label {
+        bottom: 12px;
+        font-size: 10px;
+    }
+
+    .letter-paper {
+
+        padding: 45px 25px;
+    }
+
+    .memory-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .memories-window {
+
+        padding: 25px 18px;
+    }
+
+    .contract-paper {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 30px 22px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .fingerprint-section {
+
+        border-right: none;
+
+        border-bottom: 1px dashed rgba(90,60,30,0.35);
+
+        padding-right: 0;
+
+        padding-bottom: 25px;
+    }
+
+    .fingerprint-circle {
+
+        width: 150px;
+        height: 150px;
+    }
+
+    .fingerprint-lines {
+
+        font-size: 80px;
+    }
+
+    .mine-word {
+
+        font-size: 70px;
+    }
+}/* NEXT PAGE BUTTON */
+
+.next-page-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+/* =================================
+   NEXT PAGE BUTTON
+================================= */
+
+.next-page-container {
+    position: fixed !important;
+    left: 50% !important;
+    bottom: 22px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    z-index: 999999 !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#nextPageButton {
+    display: block !important;
+
+    padding: 11px 35px !important;
+
+    border: none !important;
+    border-radius: 50px !important;
+
+    background: #ffffff !important;
+    color: #8b4b68 !important;
+
+    font-family: "Baloo 2", sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(80, 40, 60, 0.20);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#nextPageButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(80, 40, 60, 0.25);
+}
+
+#nextPageButton:active {
+    transform: scale(0.95);
+}
+/* PAGE TRANSITION */
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}

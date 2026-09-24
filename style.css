@@ -1,0 +1,821 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --night-1: #05071c;
+    --night-2: #0b1035;
+    --night-3: #17184b;
+
+    --star: #fff7d6;
+    --glow: #d9c8ff;
+
+    --text: #f8f4ff;
+    --soft-text: #c7c4df;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family: "Quicksand", sans-serif;
+
+    background: var(--night-1);
+}
+
+
+/* =========================
+   NIGHT SKY
+========================= */
+
+.night-sky {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(68, 68, 135, 0.4),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(58, 66, 140, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--night-1),
+            var(--night-2) 55%,
+            var(--night-3)
+        );
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1.5px);
+
+    background-size:
+        110px 110px,
+        170px 170px,
+        230px 230px;
+
+    background-position:
+        20px 30px,
+        80px 90px,
+        140px 40px;
+
+    opacity: 0.65;
+}
+
+
+/* Larger individual stars */
+
+.star {
+    position: absolute;
+
+    color: var(--star);
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 8px rgba(255, 247, 214, 0.9),
+        0 0 18px rgba(210, 198, 255, 0.7);
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 15%;
+    left: 13%;
+}
+
+.star-2 {
+    top: 23%;
+    right: 17%;
+
+    animation-delay: 1s;
+}
+
+.star-3 {
+    top: 38%;
+    left: 7%;
+
+    animation-delay: 1.7s;
+}
+
+.star-4 {
+    top: 12%;
+    right: 36%;
+
+    animation-delay: 0.6s;
+}
+
+.star-5 {
+    bottom: 22%;
+    left: 18%;
+
+    animation-delay: 2s;
+}
+
+.star-6 {
+    bottom: 18%;
+    right: 14%;
+
+    animation-delay: 1.3s;
+}
+
+.star-7 {
+    top: 48%;
+    right: 8%;
+
+    animation-delay: 2.4s;
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.35;
+
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.25);
+    }
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+    position: absolute;
+
+    top: 9%;
+    right: 10%;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fffef0,
+            #e7e4d8
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,255,235,0.55),
+        0 0 55px rgba(220,215,255,0.25);
+
+    overflow: hidden;
+}
+
+
+.moon-shadow {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    top: -12px;
+    left: 18px;
+
+    background: #0b1035;
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud {
+    position: absolute;
+
+    width: 180px;
+    height: 35px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(100, 103, 159, 0.10);
+
+    filter: blur(4px);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(100, 103, 159, 0.10);
+}
+
+.cloud::before {
+    width: 65px;
+    height: 65px;
+
+    left: 35px;
+    bottom: 0;
+}
+
+.cloud::after {
+    width: 80px;
+    height: 80px;
+
+    right: 25px;
+    bottom: 0;
+}
+
+.cloud-1 {
+    left: -50px;
+    bottom: 18%;
+
+    transform: scale(1.2);
+}
+
+.cloud-2 {
+    right: -70px;
+    bottom: 10%;
+
+    transform: scale(0.9);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.countdown-screen {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    z-index: 5;
+}
+
+
+.top-message {
+    color: var(--soft-text);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+    opacity: 0.85;
+}
+
+
+h1 {
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-weight: 400;
+
+    color: var(--text);
+
+    font-size:
+        clamp(42px, 7vw, 72px);
+
+    line-height: 0.98;
+
+    text-shadow:
+        0 0 20px rgba(200, 190, 255, 0.25);
+
+    margin-bottom: 45px;
+}
+
+
+h1 span {
+    color: #ddd0ff;
+
+    text-shadow:
+        0 0 15px rgba(220, 208, 255, 0.6);
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(8px, 2vw, 22px);
+}
+
+
+.time-box {
+    width:
+        clamp(75px, 13vw, 125px);
+
+    height:
+        clamp(80px, 13vw, 125px);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(18, 21, 62, 0.55);
+
+    border:
+        1px solid
+        rgba(222, 216, 255, 0.25);
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,0.025),
+        0 0 20px rgba(166, 153, 255, 0.12);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.time-box span {
+    color: #fffef7;
+
+    font-size:
+        clamp(30px, 5vw, 52px);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.8),
+        0 0 22px rgba(191,179,255,0.8);
+}
+
+
+.time-box small {
+    margin-top: 9px;
+
+    color: #aaa9c7;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.colon {
+    color: #dcd6ff;
+
+    font-size:
+        clamp(28px, 5vw, 50px);
+
+    margin-top: -15px;
+
+    text-shadow:
+        0 0 12px rgba(210,200,255,0.7);
+}
+
+
+/* =========================
+   WAITING TEXT
+========================= */
+
+.waiting-text {
+    margin-top: 35px;
+
+    color: #aaa8c4;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   MIDNIGHT MESSAGE
+========================= */
+
+.midnight-message {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation:
+        midnightAppear
+        1.2s
+        ease;
+}
+
+
+.midnight-message.hidden {
+    display: none;
+}
+
+
+.glowing-heart {
+    font-size: 34px;
+
+    color: #eee7ff;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 8px #fff,
+        0 0 25px #c9bbff,
+        0 0 50px #a999ff;
+
+    animation:
+        heartGlow
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+.midnight-message h2 {
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-weight: 400;
+
+    font-size:
+        clamp(42px, 7vw, 65px);
+
+    color: white;
+
+    text-shadow:
+        0 0 20px rgba(215,205,255,0.5);
+
+    margin-bottom: 12px;
+}
+
+
+.midnight-message p {
+    max-width: 400px;
+
+    color: #c5c2dd;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BEGIN BUTTON
+========================= */
+
+#beginButton {
+    border: 1px solid
+        rgba(255,255,255,0.3);
+
+    border-radius: 999px;
+
+    padding:
+        13px
+        27px;
+
+    background:
+        rgba(220,210,255,0.13);
+
+    color: white;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px
+        rgba(187,172,255,0.2);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+#beginButton:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(220,210,255,0.22);
+
+    box-shadow:
+        0 0 30px
+        rgba(187,172,255,0.35);
+}
+
+
+#beginButton:active {
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes midnightAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes heartGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .moon {
+        width: 60px;
+        height: 60px;
+
+        top: 8%;
+        right: 9%;
+    }
+
+    .moon-shadow {
+        width: 58px;
+        height: 58px;
+
+        left: 14px;
+        top: -8px;
+    }
+
+    .top-message {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: 44px;
+
+        margin-bottom: 35px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .time-box {
+        width: 72px;
+        height: 78px;
+
+        border-radius: 14px;
+    }
+
+    .time-box span {
+        font-size: 29px;
+    }
+
+    .time-box small {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .colon {
+        font-size: 25px;
+    }
+
+    .waiting-text {
+        font-size: 12px;
+
+        margin-top: 25px;
+    }
+}
+/* ==================================
+   YES / YES BUTTONS
+================================== */
+
+.ready-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 28px;
+
+    flex-wrap: wrap;
+}
+
+
+.ready-buttons button {
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f28bb5,
+            #9d8cff
+        );
+
+    box-shadow:
+        0 0 20px rgba(242, 139, 181, 0.45);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.ready-buttons button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 30px rgba(242, 139, 181, 0.7);
+}
+
+
+.ready-buttons button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* Page transition */
+
+.page-changing {
+
+    animation:
+        pageFade 0.7s ease forwards;
+}
+
+
+@keyframes pageFade {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .ready-buttons {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .ready-buttons button {
+
+        width: 180px;
+    }
+
+}
+/* PAGE TRANSITION */
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}

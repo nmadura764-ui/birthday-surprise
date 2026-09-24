@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Something Special ✨</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="night-sky">
+
+        <!-- Stars -->
+        <div class="stars"></div>
+
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
+        <div class="star star-6"></div>
+        <div class="star star-7"></div>
+
+        <!-- Moon -->
+        <div class="moon">
+            <div class="moon-shadow"></div>
+        </div>
+
+        <!-- Clouds -->
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+
+        <!-- Countdown -->
+        <main class="countdown-screen">
+
+            <p class="top-message">
+                Something special is waiting...
+            </p>
+
+            <h1>
+                Until the clock<br>
+                strikes 12
+            </h1>
+
+            <div class="countdown">
+
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+
+                <div class="colon">:</div>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <div class="colon">:</div>
+
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+
+            </div>
+
+            <p class="waiting-text" id="waitingText">
+                The story begins at midnight...
+            </p>
+
+            <!-- Midnight message -->
+
+            <div class="midnight-message hidden" id="midnightMessage">
+
+                <div class="glowing-star">
+                    ✦
+                </div>
+
+                <h2>
+                    Hey Love ❤️
+                    Are you ready?
+                </h2>
+
+                <p>
+                    Something cute is waiting for you...
+                </p>
+
+                <div class="ready-buttons">
+
+                    <button id="yesButton1">
+                        YES ✨
+                    </button>
+
+                    <button id="yesButton2">
+                        YES 💕
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

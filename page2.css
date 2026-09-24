@@ -1,0 +1,1094 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family: "Fredoka", sans-serif;
+
+}
+
+
+/* ======================================
+   BACKGROUND
+====================================== */
+
+.birthday-background {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 194, 216, 0.8),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(194, 218, 255, 0.75),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 222, 187, 0.8),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff1f7,
+            #f3edff,
+            #eaf6ff,
+            #fff5e8
+        );
+
+}
+
+
+/* ======================================
+   BACKGROUND GLOW
+====================================== */
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    width: 250px;
+    height: 250px;
+
+    background: #ffb6d5;
+
+    top: -80px;
+    left: -50px;
+}
+
+
+.glow-two {
+
+    width: 280px;
+    height: 280px;
+
+    background: #bfc8ff;
+
+    right: -100px;
+    top: 20%;
+
+}
+
+
+.glow-three {
+
+    width: 240px;
+    height: 240px;
+
+    background: #ffd8a8;
+
+    bottom: -100px;
+    left: 35%;
+
+}
+
+
+/* ======================================
+   BALLOONS
+====================================== */
+
+.balloon {
+
+    position: absolute;
+
+    font-size: 55px;
+
+    animation: balloonFloat 4s ease-in-out infinite;
+
+    pointer-events: none;
+
+}
+
+
+.balloon-one {
+
+    left: 8%;
+
+    top: 15%;
+
+    transform: rotate(-12deg);
+
+}
+
+
+.balloon-two {
+
+    right: 9%;
+
+    top: 12%;
+
+    font-size: 65px;
+
+    animation-delay: 1s;
+
+}
+
+
+.balloon-three {
+
+    left: 13%;
+
+    bottom: 12%;
+
+    font-size: 45px;
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes balloonFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+/* ======================================
+   SPARKLES
+====================================== */
+
+.sparkle {
+
+    position: absolute;
+
+    color: #d49ab6;
+
+    font-size: 30px;
+
+    animation: sparkle 2.5s ease-in-out infinite;
+
+}
+
+
+.sparkle-one {
+
+    top: 18%;
+    left: 25%;
+
+}
+
+
+.sparkle-two {
+
+    top: 25%;
+    right: 23%;
+
+    animation-delay: 0.6s;
+
+}
+
+
+.sparkle-three {
+
+    bottom: 18%;
+    right: 25%;
+
+    animation-delay: 1.2s;
+
+}
+
+
+.sparkle-four {
+
+    bottom: 25%;
+    left: 24%;
+
+    animation-delay: 1.8s;
+
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+
+        opacity: 0.25;
+
+        transform:
+            scale(0.7)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.3)
+            rotate(20deg);
+
+    }
+
+}
+
+
+/* ======================================
+   TINY STARS
+====================================== */
+
+.tiny-star {
+
+    position: absolute;
+
+    color: rgba(190, 145, 175, 0.6);
+
+    font-size: 18px;
+
+}
+
+
+.ts-one {
+    left: 5%;
+    top: 50%;
+}
+
+.ts-two {
+    right: 5%;
+    top: 55%;
+}
+
+.ts-three {
+    left: 30%;
+    top: 8%;
+}
+
+.ts-four {
+    right: 30%;
+    bottom: 8%;
+}
+
+.ts-five {
+    right: 15%;
+    bottom: 25%;
+}
+
+
+/* ======================================
+   BOOK SCENE
+====================================== */
+
+.book-scene {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.little-intro {
+
+    margin-bottom: 18px;
+
+    color: #846878;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ======================================
+   BOOK
+====================================== */
+
+.book {
+
+    position: relative;
+
+    width: 430px;
+
+    height: 540px;
+
+    filter:
+        drop-shadow(
+            0 30px 35px
+            rgba(90, 57, 76, 0.22)
+        );
+
+}
+
+
+/* Book spine */
+
+.book-spine {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 25px;
+
+    height: 100%;
+
+    border-radius:
+        18px 0 0 18px;
+
+    background:
+        linear-gradient(
+            to right,
+            #b56c91,
+            #d895b2
+        );
+
+    z-index: 1;
+
+}
+
+
+/* ======================================
+   BOOK COVER
+====================================== */
+
+.book-cover {
+
+    position: absolute;
+
+    inset: 0;
+
+    margin-left: 15px;
+
+    border-radius:
+        8px 20px 20px 8px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e99bb9,
+            #d783a7 55%,
+            #c66f97
+        );
+
+    box-shadow:
+
+        inset 5px 0 10px
+        rgba(112, 48, 77, 0.25),
+
+        inset -4px -4px 10px
+        rgba(120, 54, 84, 0.2);
+
+    overflow: hidden;
+
+}
+
+
+/* Inner border */
+
+.book-cover::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 17px;
+
+    border:
+
+        1.5px solid
+        rgba(255, 240, 247, 0.65);
+
+    border-radius: 12px;
+
+}
+
+
+/* Inner glow */
+
+.book-cover::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    top: -100px;
+    right: -80px;
+
+}
+
+
+/* ======================================
+   BOOK CONTENT
+====================================== */
+
+.cover-inner {
+
+    position: relative;
+
+    z-index: 5;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 35px;
+
+}
+
+
+.mini-crown {
+
+    font-size: 35px;
+
+    color: #fff4f8;
+
+    margin-bottom: 5px;
+
+}
+
+
+.story-label {
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #fff1f7;
+
+    font-weight: 700;
+
+}
+
+
+h1 {
+
+    margin-top: 8px;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 52px;
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    color: white;
+
+    text-shadow:
+        0 3px 10px
+        rgba(103, 44, 71, 0.2);
+
+}
+
+
+/* ======================================
+   DECORATIONS
+====================================== */
+
+.cover-decoration {
+
+    position: absolute;
+
+    color: rgba(255, 239, 247, 0.8);
+
+    font-size: 25px;
+
+}
+
+
+.top-decoration {
+
+    top: 35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.left-decoration {
+
+    left: 38px;
+
+    top: 50%;
+
+}
+
+
+.right-decoration {
+
+    right: 38px;
+
+    top: 50%;
+
+}
+
+
+.bottom-decoration {
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* ======================================
+   LINE
+====================================== */
+
+.cover-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 22px 0 18px;
+
+    color: #fff3f8;
+
+}
+
+
+.cover-line span {
+
+    display: block;
+
+    width: 55px;
+
+    height: 1px;
+
+    background:
+        rgba(255, 240, 247, 0.6);
+
+}
+
+
+/* ======================================
+   QUESTION
+====================================== */
+
+.question {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    color: #fff8fb;
+
+}
+
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+}
+
+
+.choice {
+
+    border: none;
+
+    padding: 11px 24px;
+
+    border-radius: 50px;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.yes-choice {
+
+    color: #a85d80;
+
+    background: #fff4f8;
+
+    box-shadow:
+        0 5px 15px
+        rgba(92, 42, 67, 0.18);
+
+}
+
+
+.no-choice {
+
+    color: #9b607b;
+
+    background:
+        rgba(255,255,255,0.65);
+
+}
+
+
+.choice:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.yes-choice:hover {
+
+    box-shadow:
+        0 8px 20px
+        rgba(92, 42, 67, 0.25);
+
+}
+
+
+.tiny-note {
+
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255, 239, 247, 0.7);
+
+}
+
+
+/* ======================================
+   BOOKMARK
+====================================== */
+
+.bookmark-ribbon {
+
+    position: absolute;
+
+    z-index: 10;
+
+    right: 45px;
+
+    top: -8px;
+
+    width: 25px;
+
+    height: 100px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff1a8,
+            #f7ca75
+        );
+
+    box-shadow:
+        0 5px 10px
+        rgba(80, 50, 30, 0.15);
+
+}
+
+
+.bookmark-ribbon::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -1px;
+
+    left: 0;
+
+    border-left:
+        12.5px solid transparent;
+
+    border-right:
+        12.5px solid transparent;
+
+    border-bottom:
+        15px solid #d783a7;
+
+}
+
+
+/* ======================================
+   FUNNY POPUP
+====================================== */
+
+.funny-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(69, 45, 60, 0.35);
+
+    backdrop-filter:
+        blur(8px);
+
+    padding: 20px;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+.funny-popup {
+
+    width: min(400px, 90vw);
+
+    padding: 35px 30px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #fff0f6
+        );
+
+    box-shadow:
+        0 25px 60px
+        rgba(65, 39, 54, 0.25);
+
+    animation:
+        popupIn 0.4s ease;
+
+}
+
+
+@keyframes popupIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.75)
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+.funny-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.funny-popup h2 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    color: #a75e80;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+}
+
+
+.funny-popup p {
+
+    margin-top: 10px;
+
+    color: #765a69;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+
+#goBackButton {
+
+    margin-top: 22px;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 50px;
+
+    background:
+        #d987aa;
+
+    color: white;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+#goBackButton:hover {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .book {
+
+        width: 340px;
+
+        height: 450px;
+
+    }
+
+
+    h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .question {
+
+        font-size: 20px;
+
+    }
+
+
+    .cover-inner {
+
+        padding: 25px;
+
+    }
+
+
+    .bookmark-ribbon {
+
+        right: 30px;
+
+    }
+
+
+    .balloon {
+
+        font-size: 40px;
+
+    }
+
+
+    .little-intro {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+@media (max-height: 700px) {
+
+    .book {
+
+        width: 330px;
+
+        height: 420px;
+
+    }
+
+
+    h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .question {
+
+        font-size: 19px;
+
+    }
+
+
+    .cover-line {
+
+        margin: 12px 0;
+
+    }
+
+
+    .buttons {
+
+        margin-top: 15px;
+
+    }
+
+}
+/* PAGE TRANSITION */
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}

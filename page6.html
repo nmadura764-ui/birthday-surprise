@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Choose One 🎀</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./page6.css">
+</head>
+
+<body>
+
+<div class="secret-room">
+
+    <!-- Background decorations -->
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <div class="floating-star star-one">✦</div>
+    <div class="floating-star star-two">✧</div>
+    <div class="floating-star star-three">✦</div>
+    <div class="floating-star star-four">✧</div>
+
+    <div class="doodle doodle-one">♡</div>
+    <div class="doodle doodle-two">✿</div>
+    <div class="doodle doodle-three">♡</div>
+
+
+    <!-- =================================
+         TITLE
+    ================================== -->
+
+    <header class="page-title">
+
+        <div class="tiny-label">
+            ✨ A LITTLE CHOICE ✨
+        </div>
+
+        <h1>
+            CHOOSE ONE
+        </h1>
+
+        <p>
+            at a time... 👀
+        </p>
+
+    </header>
+
+
+    <!-- =================================
+         THREE BUTTONS
+    ================================== -->
+
+    <main class="choice-area">
+
+        <!-- LETTER -->
+
+        <button
+            class="choice-circle letter-choice"
+            id="letterChoice"
+        >
+
+            <div class="circle-shine"></div>
+
+            <div class="letter-art">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+
+                    <div class="envelope-heart">
+                        ♡
+                    </div>
+                </div>
+
+            </div>
+
+            <span class="choice-label">
+                A LETTER
+            </span>
+
+        </button>
+
+
+        <!-- CAMERA -->
+
+        <button
+            class="choice-circle camera-choice"
+            id="cameraChoice"
+        >
+
+            <div class="circle-shine"></div>
+
+            <div class="camera-art">
+
+                <div class="camera-body">
+
+                    <div class="camera-top"></div>
+
+                    <div class="camera-lens">
+                        ✦
+                    </div>
+
+                    <div class="camera-dot"></div>
+
+                </div>
+
+            </div>
+
+            <span class="choice-label">
+                MEMORIES
+            </span>
+
+        </button>
+
+
+        <!-- GIFT -->
+
+        <button
+            class="choice-circle gift-choice"
+            id="giftChoice"
+        >
+
+            <div class="circle-shine"></div>
+
+            <div class="gift-art">
+
+                <div class="gift-box">
+
+                    <div class="gift-ribbon-vertical"></div>
+                    <div class="gift-ribbon-horizontal"></div>
+
+                    <div class="gift-lid"></div>
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+
+                </div>
+
+            </div>
+
+            <span class="choice-label">
+                ONE MORE
+            </span>
+
+        </button>
+
+    </main>
+
+
+    <!-- =================================
+         LETTER OVERLAY
+    ================================== -->
+
+    <div
+        class="overlay hidden"
+        id="letterOverlay"
+    >
+
+        <div class="letter-paper">
+
+            <button
+                class="close-button"
+                id="closeLetter"
+            >
+                ×
+            </button>
+
+            <div class="letter-holes">
+                ✦　✦　✦
+            </div>
+
+            <div class="letter-content">
+
+                <p class="letter-small">
+                    A LITTLE NOTE
+                </p>
+
+                <h2>
+                    To my favorite human...
+                </h2>
+
+                <div class="old-divider">
+                    ❦
+                </div>
+
+                <p>
+                    I don't think i have Something
+                    to share cause you know everything 
+                    There is really nothing new 
+                    We met by mistake but became soo close 
+                    we can't even say bye in our chat 
+                    because it never ends..
+                </p>
+
+                <p>
+                    And unfortunately for you,
+                    you're now stuck with all the
+                    nonsense, memories and surprises
+                    that come with it. 🥹
+                </p>
+
+                <p>
+                    This is only the beginning...
+                </p>
+
+                <div class="letter-signature">
+                    — Me ♡
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         MEMORIES OVERLAY
+    ================================== -->
+
+    <div
+        class="overlay memories-overlay hidden"
+        id="memoriesOverlay"
+    >
+
+        <div class="memories-window">
+
+            <button
+                class="close-button"
+                id="closeMemories"
+            >
+                ×
+            </button>
+
+
+            <!-- Fake Google Search -->
+
+            <div class="fake-google">
+
+                <div class="google-logo">
+                    Google
+                </div>
+
+                <div class="search-bar">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <span class="search-text">
+                        Memories
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Memories -->
+
+            <div class="memory-title">
+                little pieces of us ♡
+            </div>
+
+
+            <div class="memory-grid">
+
+                <!-- Replace these src files with your photos -->
+
+                <div class="memory-photo photo-one">
+
+                    <img
+                        src="memory1.jpg"
+                        alt="Memory"
+                    >
+
+                    <span>
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <div class="memory-photo photo-two">
+
+                    <img
+                        src="memory2.jpg"
+                        alt="Memory"
+                    >
+
+                    <span>
+                        ♡
+                    </span>
+
+                </div>
+
+
+                <div class="memory-photo photo-three">
+
+                    <img
+                        src="memory3.jpg"
+                        alt="Memory"
+                    >
+
+                    <span>
+                        🌸
+                    </span>
+
+                </div>
+
+
+                <div class="memory-photo photo-four">
+
+                    <img
+                        src="memory4.jpg"
+                        alt="Memory"
+                    >
+
+                    <span>
+                        ✧
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Doodles -->
+
+            <div class="memory-doodle doodle-a">
+                ♡
+            </div>
+
+            <div class="memory-doodle doodle-b">
+                ✦
+            </div>
+
+            <div class="memory-doodle doodle-c">
+                〰
+            </div>
+
+            <div class="memory-doodle doodle-d">
+                ✿
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         FINGERPRINT START POPUP
+    ================================== -->
+
+    <div
+        class="finger-start-overlay hidden"
+        id="fingerStartOverlay"
+    >
+
+        <div class="finger-start-box">
+
+            <div class="finger-start-icon">
+                ◎
+            </div>
+
+            <h2>
+                One last little thing...
+            </h2>
+
+            <p>
+                Put your finger inside the circle
+            </p>
+
+            <button id="fingerStartButton">
+                I'M READY 👀
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         FAKE CONTRACT
+    ================================== -->
+
+    <div
+        class="contract-overlay hidden"
+        id="contractOverlay"
+    >
+
+        <div class="contract-paper">
+
+            <button
+                class="close-button contract-close"
+                id="closeContract"
+            >
+                ×
+            </button>
+
+
+            <!-- Fake scanner -->
+
+            <div class="fingerprint-section">
+
+                <p class="scanner-label">
+                    SIGNATURE VERIFICATION
+                </p>
+
+                <div
+                    class="fingerprint-circle"
+                    id="fingerprintCircle"
+                >
+
+                    <div 
+                        class="finger-icon" 
+                        id="fingerIcon"
+                    >
+                        🫆
+                    </div>
+
+                    <div
+                        class="fingerprint-lines hidden"
+                        id="fingerprintLines"
+                    >
+                        ◎
+                    </div>
+
+                </div>
+
+                <p
+                    class="scanner-text"
+                    id="scannerText"
+                >
+                    PLACE FINGER
+                </p>
+
+            </div>
+
+
+            <!-- Contract -->
+
+            <div class="contract-content">
+
+                <div class="contract-heading">
+                    ✦ OFFICIAL AGREEMENT ✦
+                </div>
+
+                <div class="contract-line"></div>
+
+                <p class="contract-text">
+                    You're officially Mine
+                    Get this into that little brain of yours ,
+                    not to some doctor 
+                    and remember it. 😌
+                </p>
+
+                <p class="contract-text">
+                    Anyways...
+                    you have signed this contract.
+                </p>
+
+
+                <div class="mine-word">
+                    MINE
+                </div>
+
+
+                <div class="signature-area">
+
+                    <div class="signature-line"></div>
+
+                    <div class="signature">
+                        M.
+                    </div>
+
+                    <p>
+                        authorized nonsense
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         FINAL BUTTON
+    ================================== -->
+
+    <button
+        class="hidden continue-button"
+        id="continueButton"
+    >
+        CONTINUE ✨
+    </button>
+
+</div>
+<!-- NEXT BUTTON -->
+<div class="next-page-container">
+    <button id="nextPageButton">NEXT →</button>
+</div>
+
+<script src="./page6.js"></script>
+
+</body>
+</html>

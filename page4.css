@@ -1,0 +1,860 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Baloo 2", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN INTERROGATION ROOM
+========================================= */
+
+.interrogation-room {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #444444 0%,
+            #292929 30%,
+            #171717 65%,
+            #090909 100%
+        );
+
+    color: white;
+}
+
+
+/* =========================================
+   LIGHT
+========================================= */
+
+.ceiling-light {
+    position: absolute;
+
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 700px;
+    height: 500px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.18) 0%,
+            rgba(255,255,255,0.08) 35%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   WALL LINES
+========================================= */
+
+.wall-line {
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,0.07);
+}
+
+.line-one {
+    top: 17%;
+}
+
+.line-two {
+    top: 83%;
+}
+
+
+/* =========================================
+   TOP SECRET
+========================================= */
+
+.top-secret {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    padding: 6px 14px;
+
+    border: 2px solid rgba(255,100,100,0.5);
+
+    color: rgba(255,130,130,0.7);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================
+   CAMERA
+========================================= */
+
+.camera {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    font-size: 25px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-shadow {
+    position: absolute;
+
+    bottom: -190px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 950px;
+    height: 300px;
+
+    background: #070707;
+
+    border-radius: 50% 50% 0 0;
+
+    box-shadow:
+        0 -15px 40px rgba(0,0,0,0.5);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.interrogation-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(760px, 90vw);
+}
+
+
+/* =========================================
+   ALL SCREENS
+========================================= */
+
+.intro-screen,
+.question-screen,
+.final-reaction {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 520px;
+
+    padding: 50px 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(55,55,55,0.95),
+            rgba(18,18,18,0.97)
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   CASE FILE
+========================================= */
+
+.case-file {
+
+    margin-bottom: 22px;
+
+    padding: 7px 18px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   WARNING
+========================================= */
+
+.warning-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+
+    animation: warningPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================
+   INTRO TITLE
+========================================= */
+
+.intro-screen h1 {
+
+    font-size: clamp(42px, 7vw, 65px);
+
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.intro-screen p {
+
+    color: #bdbdbd;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CLASSIFIED
+========================================= */
+
+.classified {
+
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   BUTTON BASE
+========================================= */
+
+button {
+
+    font-family: "Baloo 2", sans-serif;
+
+    cursor: pointer;
+
+    border: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+}
+
+button:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   BEGIN BUTTON
+========================================= */
+
+#beginButton {
+
+    padding: 13px 32px;
+
+    border-radius: 50px;
+
+    background: #f3f3f3;
+
+    color: #171717;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(255,255,255,0.08);
+}
+
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
+.question-screen {
+
+    animation: questionIn 0.5s ease;
+}
+
+@keyframes questionIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   QUESTION NUMBER
+========================================= */
+
+.question-number {
+
+    position: absolute;
+
+    top: 25px;
+    left: 28px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   STAMP
+========================================= */
+
+.file-stamp {
+
+    position: absolute;
+
+    top: 23px;
+    right: 28px;
+
+    padding: 4px 9px;
+
+    border: 1px solid rgba(255,120,120,0.35);
+
+    color: rgba(255,130,130,0.65);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================
+   QUESTION ICON
+========================================= */
+
+.question-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   QUESTION TITLE
+========================================= */
+
+.question-screen h2 {
+
+    font-size: clamp(38px, 6vw, 56px);
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+}
+
+.question-screen h2 span {
+
+    color: #ffb3b3;
+
+    text-shadow:
+        0 0 20px rgba(255,120,120,0.15);
+}
+
+
+/* =========================================
+   INSTRUCTION
+========================================= */
+
+.instruction {
+
+    color: #999;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   ANSWER BUTTONS
+========================================= */
+
+.answer-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.answer-button {
+
+    min-width: 145px;
+
+    padding: 13px 28px;
+
+    border-radius: 50px;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* YES */
+
+.yes-button {
+
+    background: #f1f1f1;
+
+    color: #151515;
+}
+
+
+/* NO */
+
+.no-button {
+
+    background: #303030;
+
+    color: #eeeeee;
+
+    border: 1px solid #555;
+}
+
+
+/* FRIEND */
+
+.friend-button {
+
+    background: #dddddd;
+
+    color: #191919;
+}
+
+
+/* BOYFRIEND */
+
+.boyfriend-button {
+
+    background: #ffb0b0;
+
+    color: #351313;
+
+    box-shadow:
+        0 8px 25px rgba(255,130,130,0.15);
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-reaction {
+
+    animation: questionIn 0.5s ease;
+}
+
+
+.stamp {
+
+    padding: 8px 18px;
+
+    border: 2px solid #9ed6a4;
+
+    color: #9ed6a4;
+
+    letter-spacing: 3px;
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 25px;
+}
+
+
+.final-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 12px;
+}
+
+
+.final-reaction h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.final-reaction p {
+
+    color: #aaa;
+
+    font-size: 19px;
+
+    margin-bottom: 25px;
+}
+
+
+#continueButton {
+
+    padding: 13px 30px;
+
+    border-radius: 50px;
+
+    background: #f2f2f2;
+
+    color: #171717;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.reaction-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.75);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.reaction-popup {
+
+    width: min(430px, 90vw);
+
+    padding: 38px 28px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #292929,
+            #141414
+        );
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6);
+
+    animation: popupIn 0.35s ease;
+}
+
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.reaction-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+.reaction-popup h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.reaction-popup p {
+
+    color: #bbb;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+#reactionBackButton {
+
+    padding: 11px 25px;
+
+    border-radius: 50px;
+
+    background: #f0f0f0;
+
+    color: #181818;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   TRANSITION
+========================================= */
+
+.page-changing {
+
+    animation: pageFadeOut 0.7s ease forwards;
+}
+
+@keyframes pageFadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .interrogation-container {
+
+        width: 92vw;
+    }
+
+    .intro-screen,
+    .question-screen,
+    .final-reaction {
+
+        min-height: 500px;
+
+        padding: 45px 20px;
+    }
+
+    .top-secret {
+
+        top: 15px;
+        left: 15px;
+
+        font-size: 10px;
+    }
+
+    .camera {
+
+        top: 15px;
+        right: 15px;
+    }
+
+    .question-number {
+
+        top: 20px;
+        left: 18px;
+
+        font-size: 11px;
+    }
+
+    .file-stamp {
+
+        top: 20px;
+        right: 18px;
+
+        font-size: 9px;
+    }
+
+    .question-screen h2 {
+
+        font-size: 39px;
+    }
+
+    .question-icon {
+
+        font-size: 45px;
+    }
+
+    .instruction {
+
+        font-size: 15px;
+    }
+
+    .answer-buttons {
+
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .answer-button {
+
+        width: 100%;
+    }
+
+    .intro-screen h1 {
+
+        font-size: 42px;
+    }
+
+    .intro-screen p {
+
+        font-size: 17px;
+    }
+}
+/* PAGE TRANSITION */
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}

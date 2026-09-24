@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interrogation Room 👀</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- IMPORTANT: page4.css must be in the same folder -->
+    <link rel="stylesheet" href="./page4.css">
+</head>
+
+<body>
+
+<div class="interrogation-room">
+
+    <div class="ceiling-light"></div>
+
+    <div class="wall-line line-one"></div>
+    <div class="wall-line line-two"></div>
+
+    <div class="top-secret">
+        TOP SECRET
+    </div>
+
+    <div class="camera">
+        📹
+    </div>
+
+
+    <div class="table-shadow"></div>
+
+
+    <main class="interrogation-container">
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="intro-screen" id="introScreen">
+
+            <div class="case-file">
+                CASE FILE #001
+            </div>
+
+            <div class="warning-icon">
+                ⚠️
+            </div>
+
+            <h1>
+                INTERROGATION<br>
+                BEGINS
+            </h1>
+
+            <p>
+                You have been brought here<br>
+                for a very serious investigation.
+            </p>
+
+            <div class="classified">
+                CLASSIFIED INFORMATION
+            </div>
+
+            <button id="beginButton">
+                I AM READY 👀
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             QUESTION 1
+        ========================== -->
+
+        <section class="question-screen hidden" id="question1">
+
+            <div class="question-number">
+                QUESTION 01 / 03
+            </div>
+
+            <div class="file-stamp">
+                CONFIDENTIAL
+            </div>
+
+            <div class="question-icon">
+                🕵️
+            </div>
+
+            <h2>
+                Are you my<br>
+                <span>kuchu puchu?</span>
+            </h2>
+
+            <p class="instruction">
+                Answer carefully. Your response will be recorded.
+            </p>
+
+            <div class="answer-buttons">
+
+                <button
+                    class="answer-button yes-button"
+                    id="q1Yes"
+                >
+                    YES 😌
+                </button>
+
+                <button
+                    class="answer-button no-button"
+                    id="q1No"
+                >
+                    NO 😐
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUESTION 2
+        ========================== -->
+
+        <section class="question-screen hidden" id="question2">
+
+            <div class="question-number">
+                QUESTION 02 / 03
+            </div>
+
+            <div class="file-stamp">
+                VERY SERIOUS
+            </div>
+
+            <div class="question-icon">
+                👀
+            </div>
+
+            <h2>
+                Do you<br>
+                <span>love me?</span>
+            </h2>
+
+            <p class="instruction">
+                Think before you answer...
+            </p>
+
+            <div class="answer-buttons">
+
+                <button
+                    class="answer-button yes-button"
+                    id="q2Yes"
+                >
+                    YES 🥹
+                </button>
+
+                <button
+                    class="answer-button no-button"
+                    id="q2No"
+                >
+                    NO 😭
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUESTION 3
+        ========================== -->
+
+        <section class="question-screen hidden" id="question3">
+
+            <div class="question-number">
+                FINAL QUESTION / 03
+            </div>
+
+            <div class="file-stamp">
+                HIGHLY CLASSIFIED
+            </div>
+
+            <div class="question-icon">
+                🧐
+            </div>
+
+            <h2>
+                Who am I<br>
+                <span>to you?</span>
+            </h2>
+
+            <p class="instruction">
+                Choose your answer wisely.
+            </p>
+
+            <div class="answer-buttons">
+
+                <button
+                    class="answer-button friend-button"
+                    id="friendButton"
+                >
+                    FRIEND 👯
+                </button>
+
+                <button
+                    class="answer-button boyfriend-button"
+                    id="boyfriendButton"
+                >
+                    BOYFRIEND 👀
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL REACTION
+        ========================== -->
+
+        <section class="final-reaction hidden" id="finalReaction">
+
+            <div class="stamp">
+                CASE CLOSED
+            </div>
+
+            <div class="final-emoji" id="finalEmoji">
+                😌
+            </div>
+
+            <h2 id="finalTitle">
+                INTERROGATION COMPLETE
+            </h2>
+
+            <p id="finalMessage">
+                You survived the investigation.
+            </p>
+
+            <button id="continueButton">
+                Continue ➜
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FUNNY POPUP
+    ========================== -->
+
+    <div
+        class="reaction-overlay hidden"
+        id="reactionOverlay"
+    >
+
+        <div class="reaction-popup">
+
+            <div
+                class="reaction-emoji"
+                id="reactionEmoji"
+            >
+                😭
+            </div>
+
+            <h2 id="reactionTitle">
+                WAIT.
+            </h2>
+
+            <p id="reactionMessage">
+                Your answer has been recorded.
+            </p>
+
+            <button id="reactionBackButton">
+                Go back 👀
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT: JavaScript is loaded AFTER the HTML -->
+<script src="./page4.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Secret Lock 🔐</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./page7.css">
+
+</head>
+
+
+<body>
+
+<div class="lock-page">
+
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="star star-one">✦</div>
+    <div class="star star-two">✧</div>
+    <div class="star star-three">✦</div>
+    <div class="star star-four">♡</div>
+    <div class="star star-five">✧</div>
+
+
+    <!-- =====================================
+         MAIN TITLE
+    ====================================== -->
+
+    <div class="top-title">
+
+        <div class="small-title">
+            ✨ TOP SECRET ✨
+        </div>
+
+        <h1>
+            ONE LAST LITTLE LOCK
+        </h1>
+
+        <p>
+            before your next surprise... 👀
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         DORAEMON SIDE
+    ====================================== -->
+
+    <section class="character-section">
+
+        <div class="thought-bubble">
+
+            <span class="bubble-small"></span>
+            <span class="bubble-smaller"></span>
+
+            <p>
+                Unlock to get your
+                <br>
+                next surprise 🎁
+            </p>
+
+        </div>
+
+
+        <div class="character-container">
+
+            <!-- Put your permitted Doraemon image here -->
+
+            <img
+                src="doraemon.png"
+                alt="Doraemon"
+                class="doraemon-image"
+            >
+
+        </div>
+
+
+        <div
+            class="angry-character hidden"
+            id="angryMessage"
+        >
+
+            😤
+
+            <span>
+                HEY!
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NUMBER LOCK
+    ====================================== -->
+
+    <section class="lock-section">
+
+        <div class="lock-card">
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h2>
+                SECRET CODE
+            </h2>
+
+            <p class="lock-subtitle">
+                Enter the 8-digit password
+            </p>
+
+
+            <!-- Display -->
+
+            <div
+                class="code-display"
+                id="codeDisplay"
+            >
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+                <span>_</span>
+            </div>
+
+
+            <!-- Number Pad -->
+
+            <div class="number-pad">
+
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+
+                <button
+                    class="clear-button"
+                    id="clearButton"
+                >
+                    CLEAR
+                </button>
+
+                <button data-number="0">0</button>
+
+                <button
+                    class="enter-button"
+                    id="enterButton"
+                >
+                    ✓
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         HINT
+    ====================================== -->
+
+    <div
+        class="hint-paper hidden"
+        id="hintPaper"
+    >
+
+        <div class="paper-pin">
+            📌
+        </div>
+
+        <div class="hint-title">
+            HINT
+        </div>
+
+        <p>
+            shhh! 🤫
+        </p>
+
+        <p>
+            it is one of our
+            <br>
+            birthday 
+        </p>
+
+        <div class="paper-doodle">
+            〰 ♡ 〰
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         WRONG PASSWORD MESSAGE
+    ====================================== -->
+
+    <div
+        class="wrong-popup hidden"
+        id="wrongPopup"
+    >
+
+        <div class="wrong-character">
+            😤
+        </div>
+
+        <h2>
+            HEY HEY!
+        </h2>
+
+        <p>
+            That's not the password!
+        </p>
+
+        <p class="wrong-small">
+            Try again... 👀
+        </p>
+
+        <button id="wrongOkay">
+            Okay okay 😭
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         SUCCESS POPUP
+    ====================================== -->
+
+    <div
+        class="success-overlay hidden"
+        id="successOverlay"
+    >
+
+        <div class="success-popup">
+
+            <div class="success-emoji">
+                😁
+            </div>
+
+            <h2>
+                Hehehe ,
+            </h2>
+
+            <p>
+                I was testing you 😁
+            </p>
+
+            <button id="nextButton">
+                NEXT SURPRISE ✨
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="./page7.js"></script>
+
+</body>
+
+</html>

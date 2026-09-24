@@ -1,0 +1,970 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Baloo 2", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN PARTY ROOM
+========================================= */
+
+.party-room {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #fff3f8 0%,
+            #ffe3ef 35%,
+            #f7cfe0 70%,
+            #eeb8d0 100%
+        );
+
+    color: #5a3850;
+}
+
+
+/* =========================================
+   CURTAINS
+========================================= */
+
+.curtain {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 150px;
+    height: 100%;
+
+    opacity: 0.45;
+}
+
+.curtain-left {
+
+    left: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #d99bb7 0px,
+            #d99bb7 22px,
+            #efb8cf 22px,
+            #efb8cf 45px
+        );
+
+    border-radius: 0 0 70% 0;
+}
+
+.curtain-right {
+
+    right: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #d99bb7 0px,
+            #d99bb7 22px,
+            #efb8cf 22px,
+            #efb8cf 45px
+        );
+
+    border-radius: 0 0 0 70%;
+}
+
+
+/* =========================================
+   FAIRY LIGHTS
+========================================= */
+
+.fairy-lights {
+
+    position: absolute;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(850px, 90vw);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    z-index: 2;
+}
+
+.fairy-lights span {
+
+    font-size: 19px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.9),
+        0 0 18px rgba(255,160,210,0.8);
+
+    animation: twinkle 1.8s infinite ease-in-out;
+}
+
+.fairy-lights span:nth-child(even) {
+    animation-delay: 0.7s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon {
+
+    position: absolute;
+
+    font-size: 50px;
+
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(150,70,110,0.15)
+        );
+
+    animation: balloonFloat 4s ease-in-out infinite;
+}
+
+.balloon-one {
+
+    left: 8%;
+    top: 20%;
+
+    animation-delay: 0.2s;
+}
+
+.balloon-two {
+
+    right: 9%;
+    top: 22%;
+
+    animation-delay: 1s;
+}
+
+.balloon-three {
+
+    left: 13%;
+    bottom: 15%;
+
+    font-size: 42px;
+
+    animation-delay: 1.5s;
+}
+
+.balloon-four {
+
+    right: 13%;
+    bottom: 17%;
+
+    font-size: 43px;
+
+    animation-delay: 0.6s;
+}
+
+@keyframes balloonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(3deg);
+    }
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.star {
+
+    position: absolute;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    opacity: 0.7;
+
+    animation: starFloat 3s infinite ease-in-out;
+}
+
+.star-one {
+    left: 25%;
+    top: 17%;
+}
+
+.star-two {
+    right: 25%;
+    top: 15%;
+
+    animation-delay: 0.8s;
+}
+
+.star-three {
+    left: 7%;
+    top: 55%;
+
+    animation-delay: 1.2s;
+}
+
+.star-four {
+    right: 8%;
+    top: 57%;
+
+    animation-delay: 1.8s;
+}
+
+.star-five {
+    left: 22%;
+    bottom: 10%;
+
+    animation-delay: 0.5s;
+}
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   GIFT BOXES
+========================================= */
+
+.gift {
+
+    position: absolute;
+
+    font-size: 42px;
+
+    opacity: 0.8;
+
+    animation: giftFloat 4s ease-in-out infinite;
+}
+
+.gift-one {
+
+    bottom: 8%;
+    left: 25%;
+
+    animation-delay: 0.5s;
+}
+
+.gift-two {
+
+    bottom: 6%;
+    right: 24%;
+
+    font-size: 35px;
+
+    animation-delay: 1.2s;
+}
+
+.gift-three {
+
+    top: 30%;
+    left: 5%;
+
+    font-size: 32px;
+
+    animation-delay: 2s;
+}
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.surprise-container {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(760px, 90vw);
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.little-label {
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #a55f82;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.surprise-card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 510px;
+
+    padding: 55px 35px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.93),
+            rgba(255,244,249,0.92)
+        );
+
+    border: 2px solid rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 30px 80px rgba(140,70,105,0.18),
+        inset 0 1px 0 white;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   CARD SPARKLES
+========================================= */
+
+.card-sparkle {
+
+    position: absolute;
+
+    color: #e5a1bf;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+}
+
+.card-sparkle.sparkle-one {
+
+    top: 25px;
+    left: 30px;
+}
+
+.card-sparkle.sparkle-two {
+
+    top: 30px;
+    right: 35px;
+}
+
+.card-sparkle.sparkle-three {
+
+    bottom: 25px;
+    left: 50%;
+}
+
+
+/* =========================================
+   QUESTION CONTENT
+========================================= */
+
+.question-content {
+
+    width: 100%;
+
+    animation: contentIn 0.6s ease;
+}
+
+@keyframes contentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.main-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation: littleBounce 2s infinite ease-in-out;
+}
+
+@keyframes littleBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.question-content h1 {
+
+    font-size: clamp(40px, 7vw, 62px);
+
+    line-height: 1;
+
+    color: #70465d;
+
+    margin-bottom: 20px;
+
+    font-weight: 800;
+}
+
+.question-content h1 span {
+
+    color: #d777a1;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.tiny-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #d786a9;
+
+    margin: 10px auto 18px;
+}
+
+.tiny-divider span {
+
+    display: block;
+
+    width: 55px;
+    height: 1px;
+
+    background: #e8b5ca;
+}
+
+
+/* =========================================
+   QUESTION TEXT
+========================================= */
+
+.question-text {
+
+    font-size: 21px;
+
+    color: #8b6275;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+button {
+
+    font-family: "Baloo 2", sans-serif;
+
+    cursor: pointer;
+
+    border: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+}
+
+button:active {
+
+    transform: scale(0.96);
+}
+
+
+.yes-button {
+
+    padding: 13px 35px;
+
+    border-radius: 50px;
+
+    background: #d978a2;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(210,110,155,0.2);
+}
+
+.yes-button:hover {
+
+    box-shadow:
+        0 14px 30px rgba(210,110,155,0.3);
+}
+
+
+.no-button {
+
+    padding: 13px 35px;
+
+    border-radius: 50px;
+
+    background: #fff;
+
+    color: #83566c;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    border: 2px solid #edc5d6;
+}
+
+
+/* =========================================
+   YES MESSAGE
+========================================= */
+
+.surprise-message {
+
+    width: 100%;
+
+    animation: messageAppear 0.7s ease;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.big-gift {
+
+    font-size: 75px;
+
+    margin-bottom: 5px;
+
+    animation: giftPop 1.5s infinite ease-in-out;
+}
+
+@keyframes giftPop {
+
+    0%,
+    100% {
+        transform: rotate(-3deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(3deg) scale(1.08);
+    }
+}
+
+
+.little-text {
+
+    color: #b06b8c;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+.surprise-message h2 {
+
+    color: #70465d;
+
+    font-size: clamp(36px, 6vw, 55px);
+
+    line-height: 1.05;
+
+    margin-bottom: 15px;
+}
+
+.surprise-message h2 span {
+
+    color: #d777a1;
+}
+
+
+.message-text {
+
+    color: #9a7183;
+
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CHECK OUT BUTTON
+========================================= */
+
+.check-button {
+
+    padding: 13px 38px;
+
+    border-radius: 50px;
+
+    background: #d777a1;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 30px rgba(210,110,155,0.25);
+}
+
+.check-button:hover {
+
+    box-shadow:
+        0 15px 35px rgba(210,110,155,0.35);
+}
+
+
+/* =========================================
+   FUNNY POPUP
+========================================= */
+
+.funny-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(91,47,69,0.45);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.funny-popup {
+
+    width: min(430px, 90vw);
+
+    padding: 38px 28px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: #fff8fb;
+
+    border: 2px solid white;
+
+    box-shadow:
+        0 30px 80px rgba(90,40,65,0.25);
+
+    animation: popupIn 0.35s ease;
+}
+
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.funny-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 8px;
+}
+
+
+.funny-popup h2 {
+
+    color: #70465d;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.funny-popup p {
+
+    color: #946e81;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+#goBackButton {
+
+    padding: 11px 25px;
+
+    border-radius: 50px;
+
+    background: #d777a1;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .curtain {
+
+        width: 70px;
+    }
+
+    .fairy-lights {
+
+        width: 85vw;
+    }
+
+    .balloon {
+
+        font-size: 35px;
+    }
+
+    .gift {
+
+        font-size: 30px;
+    }
+
+    .surprise-container {
+
+        width: 92vw;
+    }
+
+    .surprise-card {
+
+        min-height: 500px;
+
+        padding: 45px 20px;
+
+        border-radius: 35px;
+    }
+
+    .question-content h1 {
+
+        font-size: 42px;
+    }
+
+    .question-text {
+
+        font-size: 18px;
+    }
+
+    .buttons {
+
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .yes-button,
+    .no-button {
+
+        width: 100%;
+    }
+
+    .surprise-message h2 {
+
+        font-size: 39px;
+    }
+
+    .message-text {
+
+        font-size: 18px;
+    }
+}
+/* PAGE TRANSITION */
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}
